@@ -9,6 +9,7 @@ import MyBook from './MyBook';
 import MyFunction from './MyFunction';
 import MyHelloChildren from './MyHelloChildren';
 import MyDefault from './MyDefault';
+import MyArticle from './MyArticle';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
@@ -108,5 +109,29 @@ ReactDOM.render(
         <MyDefault name="名前あり" />
     </React.Fragment>,
     document.getElementById('default')
+)
+
+const articles = [
+    {
+        url: 'http://example.com',
+        title: 'sample',
+        description: 'サンプルです',
+        isNew: true
+    },
+    {
+        url: 'http://example.com',
+        title: 'サンプル',
+        description: 'サンプルですね',
+        isNew: false,
+    }
+]
+
+ReactDOM.render(
+    <dl>
+        {articles.map((article) =>
+            <MyArticle {...article} />
+        )}
+    </dl>,
+    document.getElementById('article')
 )
 registerServiceWorker();
