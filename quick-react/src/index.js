@@ -6,6 +6,7 @@ import MyHello from './MyHello';
 import MyType from './MyType';
 import MyAttr from './MyAttr';
 import MyBook from './MyBook';
+import MyFunction from './MyFunction';
 import MyHelloChildren from './MyHelloChildren';
 import registerServiceWorker from './registerServiceWorker';
 
@@ -91,5 +92,9 @@ const book = {
 ReactDOM.render(
     <MyBook info={book} />,
     document.getElementById('book')
+)
+ReactDOM.render(
+    <MyFunction name="function componentからの呼び出し" />,
+    document.getElementById('func') 
 )
 registerServiceWorker();
