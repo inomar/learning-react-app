@@ -5,6 +5,7 @@ import App from './App';
 import MyHello from './MyHello';
 import MyType from './MyType';
 import MyAttr from './MyAttr';
+import MyHelloChildren from './MyHelloChildren';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
@@ -70,5 +71,13 @@ const attr = {name: 'makoto', age: 27, sex: '男'}
 ReactDOM.render(
     <MyAttr {...attr} />,
     document.getElementById('myAttr')
+)
+
+ReactDOM.render(
+    <MyHelloChildren>
+      <b>山田</b>
+      <p>ダニエル</p>
+    </MyHelloChildren>,
+    document.getElementById('myHelloChildren')
 )
 registerServiceWorker();
