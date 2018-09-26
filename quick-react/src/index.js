@@ -5,6 +5,7 @@ import App from './App';
 import MyHello from './MyHello';
 import MyType from './MyType';
 import MyAttr from './MyAttr';
+import MyBook from './MyBook';
 import MyHelloChildren from './MyHelloChildren';
 import registerServiceWorker from './registerServiceWorker';
 
@@ -79,5 +80,16 @@ ReactDOM.render(
       <p>ダニエル</p>
     </MyHelloChildren>,
     document.getElementById('myHelloChildren')
+)
+
+const book = {
+    isbn: 'WGS-JST-001',
+    title: '速習Webpack',
+    price: 454,
+    published: 'WINGSプロジェクト'
+}
+ReactDOM.render(
+    <MyBook info={book} />,
+    document.getElementById('book')
 )
 registerServiceWorker();
