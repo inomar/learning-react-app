@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import MyHello from './MyHello';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
@@ -11,4 +12,43 @@ setInterval(() => {
         document.getElementById('now')
     )
 })
+
+const color = { color: 'blue', backgroundColor: 'gray'}
+const name = 'inomar'
+ReactDOM.render(
+    <p style={color}>私の名前は{name}です</p>,
+    document.getElementById('color')
+
+)
+
+const attrs = {
+    src: 'https://www.tv-asahi.co.jp/doraemon/cast/img/doraemon.jpg',
+    alt: '',
+    title: 'どどどどどらえもん'
+}
+ReactDOM.render(
+    <img {...attrs} />,
+    document.getElementById('image')
+)
+
+const text = `
+  こんばんは</br>
+  ぼくドラえもんです。
+`
+ReactDOM.render(
+    <p dangerouslySetInnnerHTML={{__html: text }}></p>,
+    document.getElementById('text')
+)
+
+const firstName = 'makoto'
+const tag = React.createElement(
+    'h1',
+    {className: 'title', style: {color: 'red'}},
+    `こんにちは${firstName}さん`
+)
+
+ReactDOM.render(
+    <MyHello name="makoto" />,
+    document.getElementById('hello')
+)
 registerServiceWorker();
