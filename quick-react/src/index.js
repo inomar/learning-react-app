@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import MyHello from './MyHello';
+import MyType from './MyType';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
@@ -50,5 +51,18 @@ const tag = React.createElement(
 ReactDOM.render(
     <MyHello name="makoto" />,
     document.getElementById('hello')
+)
+
+ReactDOM.render(
+    <div>
+        <MyType value="まこと" />
+        <MyType value={'なまえ'} />
+        <MyType value={ 108 } />
+        <MyType value={ true } />
+        <MyType value={ ['起', '承', '転', '結'] } />
+        <MyType value={ {name: 'makoaot', age: '27'} } />
+        <MyType value={ () => { console.log('Hoge')} } />
+    </div>,
+    document.getElementById('typeValue')
 )
 registerServiceWorker();
