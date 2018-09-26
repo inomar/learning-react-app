@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MyCover from './MyCover';
+import PropTypes from 'prop-types';
 
 export default class MyBook extends Component {
   render() {
@@ -14,4 +15,13 @@ export default class MyBook extends Component {
           </div>
       )
   }
+}
+
+MyBook.propTypes = {
+    info: PropTypes.object.isRequired,
+    // info: {
+    //     title: PropTypes.string.isRequired,
+    //     price: PropTypes.number.isRequired,
+    //     published: PropTypes.string.isRequired
+    // }
 }

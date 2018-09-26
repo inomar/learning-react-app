@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import MyHello from './MyHello';
-import MyType from './MyType';
+import MyType, { Member } from './MyType';
 import MyAttr from './MyAttr';
 import MyBook from './MyBook';
 import MyFunction from './MyFunction';
 import MyHelloChildren from './MyHelloChildren';
+import MyDefault from './MyDefault';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
@@ -40,10 +41,6 @@ const text = `
   こんばんは</br>
   ぼくドラえもんです。
 `
-ReactDOM.render(
-    <p dangerouslySetInnnerHTML={{__html: text }}></p>,
-    document.getElementById('text')
-)
 
 const firstName = 'makoto'
 const tag = React.createElement(
@@ -66,6 +63,13 @@ ReactDOM.render(
         <MyType value={ ['起', '承', '転', '結'] } />
         <MyType value={ {name: 'makoaot', age: '27'} } />
         <MyType value={ () => { console.log('Hoge')} } />
+        <MyType prop1={ new Member() } />
+        <MyType prop2="不明" />
+        <MyType prop3="string" />
+        <MyType prop3={3} />
+        <MyType prop3={false} />
+        <MyType prop4={[1,2,5]} />
+        <MyType prop5={{name: 'makoto', age: 27, sex: '不明'}} />
     </div>,
     document.getElementById('typeValue')
 )
@@ -96,5 +100,13 @@ ReactDOM.render(
 ReactDOM.render(
     <MyFunction name="function componentからの呼び出し" />,
     document.getElementById('func') 
+)
+
+ReactDOM.render(
+    <React.Fragment>
+        <MyDefault />
+        <MyDefault name="名前あり" />
+    </React.Fragment>,
+    document.getElementById('default')
 )
 registerServiceWorker();
