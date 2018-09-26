@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import MyHello from './MyHello';
 import MyType from './MyType';
+import MyAttr from './MyAttr';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
@@ -64,5 +65,10 @@ ReactDOM.render(
         <MyType value={ () => { console.log('Hoge')} } />
     </div>,
     document.getElementById('typeValue')
+)
+const attr = {name: 'makoto', age: 27, sex: '男'}
+ReactDOM.render(
+    <MyAttr {...attr} />,
+    document.getElementById('myAttr')
 )
 registerServiceWorker();
