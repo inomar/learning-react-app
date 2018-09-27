@@ -10,6 +10,7 @@ import MyFunction from './MyFunction';
 import MyHelloChildren from './MyHelloChildren';
 import MyDefault from './MyDefault';
 import MyArticle from './MyArticle';
+import User from './User';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
@@ -134,4 +135,41 @@ ReactDOM.render(
     </dl>,
     document.getElementById('article')
 )
+
+
+
+const users = [
+    {
+        name: '西郷',
+        age: 33,
+        image: 'http://www.meijiishin150countdown.com/meiji/wp-content/uploads/2018/08/833cb2ee08cd41cbb5511c98011aa593.jpg',
+        sex: '男性',
+    },
+    {
+        name: '坂本',
+        age: 34,
+        image: 'https://yanajun.com/wp-content/uploads/takedatetsuya03.jpg',
+        sex: '男性',
+    },
+    {
+        name: '木戸',
+        age: 30,
+        image: 'https://img.tokyo-sports.co.jp/wp-content/uploads/2013/06/4eed894abf9596b4fc083249bfb669f2-225x300.jpg',
+        sex: '不明',
+    },
+    {
+        name: '大久保',
+        age: 33,
+        image: 'http://image.news.livedoor.com/newsimage/stf/e/b/eb6f056805bbf4e510bb36cdc78a6b3b-cm.jpg?v=20170801074048',
+        sex: '女性',
+    }
+]
+
+ReactDOM.render(
+    <div>
+        {users.map ((user) => <User {...user} />)}
+    </div>,
+    document.getElementById('user')
+)
+
 registerServiceWorker();
