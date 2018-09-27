@@ -12,6 +12,12 @@ export default class User extends Component {
       isNew: PropTypes.bool,
   };
 
+  renderIsNew(isNew) {
+      if(!this.props.isNew) {
+          return '関数からの呼び出し'
+      }
+  }
+
   render () {
       return (
           <React.Fragment>
@@ -20,6 +26,10 @@ export default class User extends Component {
               <p>{this.props.age} 歳</p>
               <p>{this.props.sex}</p>
               <p>{this.props.isNew && 'NEW!'}</p>
+              {(() =>{
+                  if(this.props.isNew) {return '若いね〜'}
+              })()}
+              <p>{this.renderIsNew(this.props.isNew)}</p>
           </React.Fragment>
       )
   }
