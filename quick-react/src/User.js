@@ -6,7 +6,10 @@ export default class User extends Component {
       name: PropTypes.string,
       age:  PropTypes.number,
       image: PropTypes.string,
-      sex:  PropTypes.oneOf(['男性', '女性', '不明'])
+      sex:  PropTypes.oneOf(
+          [ "男性", "女性", "不明"]
+      ),
+      isNew: PropTypes.bool,
   };
 
   render () {
@@ -16,6 +19,7 @@ export default class User extends Component {
               <p>{this.props.name}</p>
               <p>{this.props.age} 歳</p>
               <p>{this.props.sex}</p>
+              <p>{this.props.isNew && 'NEW!'}</p>
           </React.Fragment>
       )
   }
