@@ -11,6 +11,7 @@ import MyHelloChildren from './MyHelloChildren';
 import MyDefault from './MyDefault';
 import MyArticle from './MyArticle';
 import User from './User';
+import MyEvent from './MyEvent';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
@@ -175,6 +176,13 @@ ReactDOM.render(
         
     </div>,
     document.getElementById('user')
+)
+
+ReactDOM.render(
+    <React.Fragment>
+        <MyEvent greet="Hello" />
+    </React.Fragment>,
+    document.getElementById('event')
 )
 
 registerServiceWorker();
