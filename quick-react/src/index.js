@@ -16,6 +16,8 @@ import MyPool from './MyPool';
 import MyState from './MyState';
 import MyParent from './MyParent';
 import MyForm from './MyForm';
+import MyForm2 from './MyForm2';
+import MyTextarea from './MyTextarea';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
@@ -215,5 +217,19 @@ ReactDOM.render(
         <MyForm />
     </React.Fragment>,
     document.getElementById('form')
+)
+
+ReactDOM.render(
+    <React.Fragment>
+        <MyForm2 />
+    </React.Fragment>,
+    document.getElementById('form2')
+)
+
+ReactDOM.render(
+    <React.Fragment>
+        <MyTextarea />
+    </React.Fragment>,
+    document.getElementById('textarea')
 )
 registerServiceWorker();
