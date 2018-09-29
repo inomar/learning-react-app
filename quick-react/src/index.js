@@ -18,6 +18,7 @@ import MyParent from './MyParent';
 import MyForm from './MyForm';
 import MyForm2 from './MyForm2';
 import MyTextarea from './MyTextarea';
+import MySelect from './MySelect';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
@@ -232,4 +233,12 @@ ReactDOM.render(
     </React.Fragment>,
     document.getElementById('textarea')
 )
+
+ReactDOM.render(
+    <React.Fragment>
+        <MySelect />
+    </React.Fragment>,
+    document.getElementById('select')
+)
 registerServiceWorker();
+ 
