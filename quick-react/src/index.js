@@ -15,6 +15,7 @@ import MyEvent from './MyEvent';
 import MyPool from './MyPool';
 import MyState from './MyState';
 import MyParent from './MyParent';
+import MyForm from './MyForm';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
@@ -207,5 +208,12 @@ ReactDOM.render(
         <MyParent />
     </React.Fragment>,
     document.getElementById('parent')
+)
+
+ReactDOM.render(
+    <React.Fragment>
+        <MyForm />
+    </React.Fragment>,
+    document.getElementById('form')
 )
 registerServiceWorker();
