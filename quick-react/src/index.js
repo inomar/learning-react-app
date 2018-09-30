@@ -20,6 +20,7 @@ import MyForm2 from './MyForm2';
 import MyTextarea from './MyTextarea';
 import MySelect from './MySelect';
 import MyList from './MyList';
+import MyRadio from './MyRadio';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
@@ -247,6 +248,13 @@ ReactDOM.render(
         <MyList />
     </React.Fragment>,
     document.getElementById('selectFruit')
+)
+
+ReactDOM.render(
+    <React.Fragment>
+        <MyRadio />
+    </React.Fragment>,
+    document.getElementById('radio')
 )
 registerServiceWorker();
  
