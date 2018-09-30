@@ -19,6 +19,7 @@ import MyForm from './MyForm';
 import MyForm2 from './MyForm2';
 import MyTextarea from './MyTextarea';
 import MySelect from './MySelect';
+import MyList from './MyList';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
@@ -239,6 +240,13 @@ ReactDOM.render(
         <MySelect />
     </React.Fragment>,
     document.getElementById('select')
+)
+
+ReactDOM.render(
+    <React.Fragment>
+        <MyList />
+    </React.Fragment>,
+    document.getElementById('selectFruit')
 )
 registerServiceWorker();
  
