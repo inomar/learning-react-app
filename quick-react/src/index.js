@@ -22,6 +22,7 @@ import MySelect from './MySelect';
 import MyList from './MyList';
 import MyRadio from './MyRadio';
 import MyCheck from './MyCheck';
+import MyChecks from './MyChecks';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
@@ -263,6 +264,13 @@ ReactDOM.render(
         <MyCheck />
     </React.Fragment>,
     document.getElementById('check')
+)
+
+ReactDOM.render(
+    <React.Fragment>
+        <MyChecks />
+    </React.Fragment>,
+    document.getElementById('checks')
 )
 registerServiceWorker();
  
