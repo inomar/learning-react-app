@@ -21,6 +21,7 @@ import MyTextarea from './MyTextarea';
 import MySelect from './MySelect';
 import MyList from './MyList';
 import MyRadio from './MyRadio';
+import MyCheck from './MyCheck';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
@@ -255,6 +256,13 @@ ReactDOM.render(
         <MyRadio />
     </React.Fragment>,
     document.getElementById('radio')
+)
+
+ReactDOM.render(
+    <React.Fragment>
+        <MyCheck />
+    </React.Fragment>,
+    document.getElementById('check')
 )
 registerServiceWorker();
  

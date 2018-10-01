@@ -4,11 +4,11 @@ export default class MyRadio extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            sex: 'male'
+            sex: 'female'
         }
 
         this.handleChange = this.handleChange.bind(this)
-        this.show = this.handleChange.bind(this)
+        this.show = this.show.bind(this)
     }
 
     handleChange(e) {
