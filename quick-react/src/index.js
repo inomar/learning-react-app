@@ -23,6 +23,7 @@ import MyList from './MyList';
 import MyRadio from './MyRadio';
 import MyCheck from './MyCheck';
 import MyChecks from './MyChecks';
+import MyFile from './MyFIle';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
@@ -271,6 +272,14 @@ ReactDOM.render(
         <MyChecks />
     </React.Fragment>,
     document.getElementById('checks')
+)
+
+
+ReactDOM.render(
+    <React.Fragment>
+        <MyFile />
+    </React.Fragment>,
+    document.getElementById('file')
 )
 registerServiceWorker();
  
