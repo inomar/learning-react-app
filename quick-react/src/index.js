@@ -26,6 +26,14 @@ import MyChecks from './MyChecks';
 import MyFile from './MyFIle';
 import MyLife from './MyLife';
 import registerServiceWorker from './registerServiceWorker';
+import Main from './Main';
+
+ReactDOM.render(
+    <React.Fragment>
+        <Main />
+    </React.Fragment>,
+    document.getElementById('route')
+)
 
 ReactDOM.render(<App />, document.getElementById('root'));
 setInterval(() => {
