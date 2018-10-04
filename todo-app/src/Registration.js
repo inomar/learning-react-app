@@ -13,13 +13,15 @@ export default class Registration extends Component {
     }
 
     add() {
-    　const add_task = document.getElementById('task').value
+    　const add_task = document.getElementById('addTask').value
+      document.getElementById('addTask').value = ''
       const tasks = this.state.task
       tasks.push(add_task)
+      
       ReactDOM.render(
           <React.Fragment>
-              {tasks.map((task) =>
-                <List task={task} />
+              {tasks.map((task, index) =>
+                <List task={task} key={index} />
               )}
           </React.Fragment>,
           document.getElementById('tasks')
@@ -29,12 +31,16 @@ export default class Registration extends Component {
 
     render() {
         return(
-            <form>
-                <label htmlFor="task">TODO</label>
-                <input type="text" id="task" name="task" />
-                <button type="button" onClick={this.add}>追加</button>
-                <div id="tasks"></div>
-            </form>
+            <React.Fragment>
+                <form>
+                    <label htmlFor="task">TODO</label>
+                    <input type="text" id="addTask" name="addTask" />
+                    <button type="button" onClick={this.add}>追加</button>
+                </form>
+                <form>
+                    <ul id="tasks"></ul>
+                </form>
+            </React.Fragment>
         )
     }
 }

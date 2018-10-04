@@ -11,10 +11,11 @@ export default class List extends Component {
     }
 
     render() {
+        const key = this._reactInternalFiber.key
         return(
-            <React.Fragment>
-                <input type="checkbox" name="tasks" onChange={this.handleChange} /> {this.props.task}
-            </React.Fragment>
+            <li>
+                <input type="checkbox" id={key} name="task" onChange={this.handleChange} /><label htmlFor={key}>{this.props.task}</label>
+            </li>
         )
     }
 }
