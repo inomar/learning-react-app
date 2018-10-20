@@ -152,3 +152,92 @@ module.exports = {
 ```bash
 $ yarn server
 ```
+
+### ESLint
+
+ESLintの依存関係を確認
+```bash
+$ yarn info eslint-config-airbnb peerDependencies
+
+yarn info v1.7.0
+{ eslint: '^4.19.1 || ^5.3.0',
+  'eslint-plugin-import': '^2.14.0',
+  'eslint-plugin-jsx-a11y': '^6.1.1',
+  'eslint-plugin-react': '^7.11.0' }
+✨  Done in 0.16s.
+
+```
+
+```bash
+$ yarn add --dev eslint-config-airbnb eslint@^5.3.0 eslint-plugin-import@^2.14.0 eslint-plugin-jsx-a11y@^6.1.1 eslint-plugin-react@^7.11.0 babel-eslint
+```
+
+
+```.eslintrc
+{
+  "extends": ["airbnb"], # airbnbのルールを継承
+  "env": {
+    "browser": true, # ブラウザのグローバル変数を有効化
+    "es6": true # es6の構文を有効化
+  },
+  "parser": "babel-eslint", # babel-eslintをパーサとして使用
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true # jsxを有効
+    }
+  }
+}
+```
+
+```pacakge.json
+# scriptsに追加
+"lint:js": "eslint './src/js/*.{js,jsx}'"
+```
+
+#### build毎にeslintを実行
+
+```bash
+$ yarn add --dev eslint-loader
+```
+
+```webpack.config.js
+{
+  module: {
+    roles [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_,modules/,
+        enforce: 'pre', // babel-loaderよりも前に実行される
+        loader: 'eslint-loader'
+      },
+      ...
+    ]
+  }
+}
+
+```
+
+```bash
+$ yarn server
+```
+
+エラーがある場合はコンパイルエラーになる
+
+### Prettier
+Prettierはコードフォーマッタ(js,jsx,css)
+
+```bash
+$ yarn add --dev prettier
+```
+
+```.prettierrc
+{
+  "printWidth": 100, # 1行あたりの最大文字数
+  "singleQuote": true # ダブルクウォート->シングル
+}
+```
+
+```package.json
+# scriptsに追加
++ "prettier": "prettier --write './src/js/*.{js,jsx}'"
+```

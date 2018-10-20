@@ -1,10 +1,11 @@
 export class Hello {
   constructor(name) {
-    this.say(name);
+    this.name = name;
+    this.say();
   }
 
-  say(name) {
-    console.log(`Hello ${name} world!`)
+  say() {
+    console.log(`Hello ${this.name} world!`);
   }
 }
 

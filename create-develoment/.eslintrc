@@ -1,0 +1,16 @@
+{
+  "extends": ["airbnb"], # airbnbのルールを継承
+  "env": {
+    "browser": true, # ブラウザのグローバル変数を有効化
+    "es6": true # es6の構文を有効化
+  },
+  "parser": "babel-eslint", # babel-eslintをパーサとして使用
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true # jsxを有効
+    }
+  },
+  "rules": {
+    "no-console": "off" # console.log()でwarningしない
+  }
+}
