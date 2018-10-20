@@ -2,5 +2,8 @@
   "name": "create-develoment",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/preset-env": "^7.1.0"
+  }
 }
