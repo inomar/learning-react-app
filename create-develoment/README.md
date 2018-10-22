@@ -241,3 +241,69 @@ $ yarn add --dev prettier
 # scriptsに追加
 + "prettier": "prettier --write './src/js/*.{js,jsx}'"
 ```
+
+### Flow
+静的型チェックツール
+- コードの品質を上げる
+```bash
+$ yarn add --dev flow-bin @babel/preset-flow eslint-plugin-flowtype
+```
+
+flowはトランスパイルする必要があるため.babelrcで以下を追加
+```.babelrc
+# presets[]に追加
+"@babel/preset-flow"
+```
+
+FlowはESLintと競合する場合があるため、Flow用のESLintプラグインを導入
+```.eslintrc
+"extends": ["airbnb",
+    "plugin:flowtype/recommended"
+    ], # airbnbのルールを継承
+  "plugins": ["flowtype"],
+```
+
+```.flowconfg
+[ignore]
+# Flowの対象外ファイルパスを記述
+
+[include]
+# ルート以外のFlowの対象ファイルパスを記述
+
+[libs]
+# 外部のFlow定義などのファイルパスを記述
+
+[options]
+# オプションの定義を記述
+```
+
+```package.json
+# scriptsに追加
+"flow": "flow"
+```
+
+対象のファイルにコメントでflowを使うことを宣言
+```index.js
+// @flow
+export class Hello {
+  name: string;
+  constructor(name: string) {
+    this.name = name;
+    this.say();
+  }
+
+  say() {
+    console.log(`Hello ${this.name} world!`);
+  }
+}
+
+export default new Hello('inomar');
+```
+
+- boolean
+- string
+- number
+- null
+- void(undifined)
+- ?(MaybeType): null or void
+(?stringはstring,null,voidのいずれか) => 変数や引数がnullかundifinedになる可能性がある場合に活躍

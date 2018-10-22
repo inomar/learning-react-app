@@ -1,5 +1,7 @@
+// @flow
 export class Hello {
-  constructor(name) {
+  name: string;
+  constructor(name: string) {
     this.name = name;
     this.say();
   }
