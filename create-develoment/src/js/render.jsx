@@ -2,6 +2,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import '../css/index.css';
+
 import Heading from './heading';
 
 export class Render {
