@@ -307,3 +307,16 @@ export default new Hello('inomar');
 - void(undifined)
 - ?(MaybeType): null or void
 (?stringはstring,null,voidのいずれか) => 変数や引数がnullかundifinedになる可能性がある場合に活躍
+
+
+## Part4
+
+```bash
+$ yarn add react react-dom
+$ yarn add --dev @babel/preset-react @babel/core
+```
+
+.babelrcにprest-reactを追記
+```.babelrc
+"@babel/preset-react",
+```

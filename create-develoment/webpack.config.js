@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require('path');
 // webpackモジュールを読み込み
 const webpack = require('webpack');
 
@@ -14,15 +14,15 @@ module.exports = {
   devServer: {
     contentBase: dist, // 開発サーバーを立ち上げる参照ディレクトリ
     hot: true, // hot-reloadを有効
-    port: 4000 // サーバーを立ち上げるポート
+    port: 4000, // サーバーを立ち上げるポート
 
   },
-  entry: path.resolve(src, 'js/index.js'),
+  entry: path.resolve(src, 'js/render.jsx'),
   output: {
     // 生成されるファイル名
     filename: 'indexbundle.js',
     // 生成先ディレクトリ
-    path: dist
+    path: dist,
   },
   resolve: {
     // import分のパスしていにnode_modulesを省略できるようにする
@@ -36,7 +36,7 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_,modules/,
         enforce: 'pre', // babel-loaderよりも前に実行される
-        loader: 'eslint-loader'
+        loader: 'eslint-loader',
       },
       {
         // ルールを定期要するファイルの正規表現
@@ -46,17 +46,19 @@ module.exports = {
         exclude: /node_modules/,
 
         // 使用するloader
-        loader: 'babel-loader'
-      }
-    ]
+        loader: 'babel-loader',
+      },
+    ],
   },
   plugins: [
     // hot-reloadを有効にするプラグインを追加
     new webpack.HotModuleReplacementPlugin(),
 
     // HtmlWebpackPluginプラグインを追加
-    new htmlWebpackPlugin()
+    new htmlWebpackPlugin({
+      template: path.resolve(src, 'html/index.html'), // templateの設定を追加
+    }),
   ],
   // sourceMappingの設定
-  devtool: 'cheap-module-eval-source-map'
-}
+  devtool: 'cheap-module-eval-source-map',
+};
