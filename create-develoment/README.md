@@ -323,7 +323,7 @@ $ yarn add --dev @babel/preset-react @babel/core
 
 
 ## Part5
-cssを適用
+### cssを適用
 
 ```bash
 $ yarn add --dev mini-css-extract-plugin css-loader
@@ -408,4 +408,32 @@ module.exports = {
   devtool: 'cheap-module-eval-source-map',
 };
 
+```
+
+あとはcssファイルを作成して、jsファイルからimportするだけ
+この設定の場合、msin.cssが生成される。ファイル名を指定したい場合は以下のように
+filenameを指定する
+
+```
+new miniCSSExtractPlugin({
+  filename: 'app.css' // ファイル名を指定
+})
+```
+
+### StyleLint
+
+```bash
+$ yarn add --dev stylelint stylelint-config-standard
+```
+
+```.stylelintrc
+{
+  "extends": "stylelint-config-standard"
+}
+```
+
+```package.json
+"scripts": {
+  "lint:css": "stylelint './src/css/*.css'"
+}
 ```
