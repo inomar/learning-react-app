@@ -437,3 +437,53 @@ $ yarn add --dev stylelint stylelint-config-standard
   "lint:css": "stylelint './src/css/*.css'"
 }
 ```
+
+### PostCSS
+PostCSSはパーサーであり、プラグインで拡張する必要がある
+
+```bash
+$ yarn add --dev postcss-loader
+```
+
+
+postcss.config.jsを作成
+ここにプラグインを追加していく
+```postcss.config.js
+module.exports = {
+  plugins: {}
+}
+```
+
+webpack.config.jsにpostcss-loaderの設定を記述
+```webpack.config.js
+
+{
+  test: /\.css$/,
+  exclude: /node_modules/,
+  use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
+}
+```
+
+```bash
+$ yarn server
+```
+
+### postcssのpluginの追加
+- autoprefixer: ベンダープレフィックスを自動的に設定してくれる
+- postcss-custom-properties: CSS CUSTOM PROPERTIESを解釈するためのプラグイン
+- postcss-nesting: ネスト記法を使えるプラグイン
+
+```bash
+$ yarn add --dev autoprefixer postcss-custom-properties postcss-nesting
+```
+
+
+```postcss.config.js
+plugins: {
+    autoprefixer: {
+      browsers: ['> 0.25%', 'not op_mini all']
+    },
+    'postcss-custom-properties': {},
+    'postcss-nesting': {},
+  },
+```
