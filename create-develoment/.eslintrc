@@ -5,7 +5,8 @@
   "plugins": ["flowtype"],
   "env": {
     "browser": true, # ブラウザのグローバル変数を有効化
-    "es6": true # es6の構文を有効化
+    "es6": true, # es6の構文を有効化
+    "jest": true
   },
   "parser": "babel-eslint", # babel-eslintをパーサとして使用
   "parserOptions": {

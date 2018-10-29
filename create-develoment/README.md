@@ -491,3 +491,28 @@ plugins: {
 ## part6 Reactとcssの連携
 **CSSModules**というアプローチ
 自動的にクラス名を割り振るもの
+
+## part7 Jestでテスト
+```bash
+$ yarn add --dev jest babel-jest 'babel-core@~7.0.0' @babel/core
+```
+
+```.eslint
+"env": {
+  "browser": true,
+  "es6": true,
+  "jest": true
+}
+```
+
+```package.json
+"scripts": {
+  ...
+  "jest": "jest"
+}
+```
+
+### react componentをテスト
+```bash
+$ yarn add --dev react-test-renderer identity-obj-proxy
+```
