@@ -487,3 +487,7 @@ plugins: {
     'postcss-nesting': {},
   },
 ```
+
+## part6 Reactとcssの連携
+**CSSModules**というアプローチ
+自動的にクラス名を割り振るもの

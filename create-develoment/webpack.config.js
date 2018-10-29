@@ -53,8 +53,18 @@ module.exports = {
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        use: [miniCSSExtractPlugin.loader, 'css-loader', 'postcss-loader'],
-      }
+        use: [
+          miniCSSExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: 1,
+              localIdentName: '[name]__[local]--[hash:base64:5]',
+            },
+          },
+          'postcss-loader'],
+      },
     ],
   },
   plugins: [
