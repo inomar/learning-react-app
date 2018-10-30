@@ -526,3 +526,9 @@ $ yarn add --dev webpack-merge
 ```webpack.common.js
 
 ```
+
+
+### css minify
+```bash
+$ yarn add --dev csswring
+```
