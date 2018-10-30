@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build:dev": "webpack --config webpack.config.js",
-    "server": "webpack-dev-server --open --config webpack.config.js",
+    "build:dev": "webpack --config webpack.dev.js",
+    "server": "webpack-dev-server --open --config webpack.dev.js",
     "lint:js": "eslint './src/js/*.{js,jsx}'",
     "lint:css": "stylelint './src/css/*.css'",
     "prettier": "prettier --write './src/js/*.{js,jsx}'",

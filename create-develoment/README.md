@@ -518,7 +518,11 @@ $ yarn add --dev react-test-renderer identity-obj-proxy
 ```
 
 
-## part8
+## part8 productionの設定
 ```bash
 $ yarn add --dev webpack-merge
+```
+
+```webpack.common.js
+
 ```
