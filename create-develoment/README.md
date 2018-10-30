@@ -516,3 +516,9 @@ $ yarn add --dev jest babel-jest 'babel-core@~7.0.0' @babel/core
 ```bash
 $ yarn add --dev react-test-renderer identity-obj-proxy
 ```
+
+
+## part8
+```bash
+$ yarn add --dev webpack-merge
+```
