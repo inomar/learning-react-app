@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "build:prod": "webpack --config webpack.prod.js",
     "build:dev": "webpack --config webpack.dev.js",
     "server": "webpack-dev-server --open --config webpack.dev.js",
     "lint:js": "eslint './src/js/*.{js,jsx}'",
