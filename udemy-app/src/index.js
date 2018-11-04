@@ -6,6 +6,7 @@ import Sample from './Sample';
 import MyHello from './MyHello';
 import Book from './Book';
 import Event from './Event';
+import Timer from './Timer';
 import * as serviceWorker from './serviceWorker';
 
 const profile = {
@@ -24,6 +25,7 @@ const book = {
 //ReactDOM.render(<Book info={book} />, document.getElementById('root'));
 ReactDOM.render(<Sample {...profile} />, document.getElementById('root'));
 ReactDOM.render(<Event greet="Hello"/>, document.getElementById('event'));
+ReactDOM.render(<Timer />, document.getElementById('time'));
 //ReactDOM.render(<MyHello><b>田中</b></MyHello>, document.getElementById('root'));
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
